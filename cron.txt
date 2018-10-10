@@ -1,0 +1,3 @@
+56 22 * * * mkdir zzz > /dev/null 2>&1
+56 22 * * * mkdir zzz > /dev/null 2>&1
+7 20 * * * php /opt/lampp/htdocs/traza_app/index.php cron index > /dev/null 2>&1

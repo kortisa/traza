@@ -1,0 +1,1 @@
+03 22 * * 1 php /opt/lampp/htdocs/traza_app/index.php notification cron REQ20175282513 032013006 > /dev/null 2>&1

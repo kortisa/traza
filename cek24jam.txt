@@ -1,0 +1,34 @@
+/* Cek selisih jam antara 2 tanggal dan waktu yang berbeda */
+SELECT EXTRACT(EPOCH FROM ('2016-04-30'::DATE + '01:30:00'::TIME) - ('2016-04-29'::DATE + '23:00:00'::TIME))/3600 AS diff_hours;
+
+
+/* Cek selisih jam antara 2 Timestamp
+SELECT EXTRACT(EPOCH FROM (timestamp '2017-05-29 12:00' - timestamp '2017-05-29 08:00')) / 3600 AS diff_hours;
+
+
+/* Tampilkan Timestamp sekarang
+select current_timestamp;
+select now();
+select localtimestamp;
+
+/* Convert Unix Timestamp (epoch) to Timestamp
+SELECT to_timestamp(1495950614);
+
+
+/* Convert Timestamp to Unix Timestamp (epoch)
+To convert back to unix timestamp you can use date_part:
+SELECT date_part('epoch',CURRENT_TIMESTAMP)::int
+
+
+
+
+/* ####################################### Perinta cek notif sudah 24 jam atau belum ############################################# */
+SELECT EXTRACT (EPOCH FROM (now() - (SELECT to_timestamp(1495950614)) )) / 3600 AS diff_hours;
+
+
+ 
+
+##################################### SAMPAH #######################################################################################
+SELECT EXTRACT(EPOCH FROM (timestamp '2016-08-01 10:00' - timestamp '2016-08-01 00:00')) / EXTRACT(EPOCH FROM interval '1 day');
+
+SELECT EXTRACT(EPOCH FROM ( TIMESTAMPTZ '2016-01-01 utc' - TIMESTAMPTZ '1986-01-01 utc' )) / EXTRACT(EPOCH FROM INTERVAL '1 month');
